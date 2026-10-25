@@ -28,6 +28,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Refacto.DotNet.Controllers\Refacto.DotNet.Controllers.csproj" />
+    <ProjectReference Include="..\Refacto.DotNet.Domain\Refacto.DotNet.Domain.csproj" />
+    <ProjectReference Include="..\Refacto.DotNet.Application\Refacto.DotNet.Application.csproj" />
+    <ProjectReference Include="..\Refacto.DotNet.Infrastructure\Refacto.DotNet.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

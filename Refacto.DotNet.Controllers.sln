@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refacto.DotNet.Controllers", "Refacto.DotNet.Controllers\Refacto.DotNet.Controllers.csproj", "{959D9DCF-CEDF-4C78-864D-8FAF9C273670}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refacto.DotNet.Domain", "Refacto.DotNet.Domain\Refacto.DotNet.Domain.csproj", "{B743D0E6-A9D8-4E77-A36F-0D8615BA72E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refacto.DotNet.Application", "Refacto.DotNet.Application\Refacto.DotNet.Application.csproj", "{C26537B4-315B-42D8-A6EA-12DB748840F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refacto.DotNet.Infrastructure", "Refacto.DotNet.Infrastructure\Refacto.DotNet.Infrastructure.csproj", "{61F4D13D-8277-4A40-B166-E0D52F30B04D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refacto.Dotnet.Controllers.Tests", "Refacto.Dotnet.Controllers.Tests\Refacto.Dotnet.Controllers.Tests.csproj", "{D94EB8F1-7263-46EB-888F-CDFD98945776}"
 EndProject
 Global
@@ -17,6 +23,18 @@ Global
 		{959D9DCF-CEDF-4C78-864D-8FAF9C273670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{959D9DCF-CEDF-4C78-864D-8FAF9C273670}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{959D9DCF-CEDF-4C78-864D-8FAF9C273670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B743D0E6-A9D8-4E77-A36F-0D8615BA72E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B743D0E6-A9D8-4E77-A36F-0D8615BA72E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B743D0E6-A9D8-4E77-A36F-0D8615BA72E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B743D0E6-A9D8-4E77-A36F-0D8615BA72E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26537B4-315B-42D8-A6EA-12DB748840F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26537B4-315B-42D8-A6EA-12DB748840F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26537B4-315B-42D8-A6EA-12DB748840F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26537B4-315B-42D8-A6EA-12DB748840F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F4D13D-8277-4A40-B166-E0D52F30B04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F4D13D-8277-4A40-B166-E0D52F30B04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F4D13D-8277-4A40-B166-E0D52F30B04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F4D13D-8277-4A40-B166-E0D52F30B04D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D94EB8F1-7263-46EB-888F-CDFD98945776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D94EB8F1-7263-46EB-888F-CDFD98945776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D94EB8F1-7263-46EB-888F-CDFD98945776}.Release|Any CPU.ActiveCfg = Release|Any CPU

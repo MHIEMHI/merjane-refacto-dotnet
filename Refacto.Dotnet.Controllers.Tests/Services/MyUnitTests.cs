@@ -1,27 +1,22 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Moq;
-using Moq.EntityFrameworkCore;
-using Refacto.DotNet.Controllers.Database.Context;
-using Refacto.DotNet.Controllers.Entities;
-using Refacto.DotNet.Controllers.Services;
-using Refacto.DotNet.Controllers.Services.Impl;
+using Refacto.DotNet.Application.Contracts;
+using Refacto.DotNet.Application.Services;
+using Refacto.DotNet.Application.Services.ProductHandlers;
+using Refacto.DotNet.Domain.Entities;
 
 namespace Refacto.DotNet.Controllers.Tests.Services
 {
     public class MyUnitTests
     {
-        private readonly Mock<INotificationService> _mockNotificationService;
-        private readonly Mock<AppDbContext> _mockDbContext;
-        private readonly Mock<DbSet<Product>> _mockDbSet;
         private readonly ProductService _productService;
 
         public MyUnitTests()
         {
-            _mockNotificationService = new Mock<INotificationService>();
-            _mockDbContext = new Mock<AppDbContext>();
-            _mockDbSet = new Mock<DbSet<Product>>();
-            _ = _mockDbContext.Setup(x => x.Products).ReturnsDbSet(Array.Empty<Product>());
-            _productService = new ProductService(_mockNotificationService.Object, _mockDbContext.Object);
+            _productService = new ProductService(new IProductTypeHandler[]
+            {
+                new NormalProductHandler(),
+                new SeasonalProductHandler(),
+                new ExpirableProductHandler()
+            });
         }
 
         [Fact]
@@ -37,13 +32,15 @@ namespace Refacto.DotNet.Controllers.Tests.Services
             };
 
             // WHEN
-            _productService.NotifyDelay(product.LeadTime, product);
+            ProductNotification? notification =
+                _productService.ProcessProduct(product, new DateOnly(2025, 5, 10));
 
             // THEN
             Assert.Equal(0, product.Available);
             Assert.Equal(15, product.LeadTime);
-            _mockDbContext.Verify(ctx => ctx.SaveChanges(), Times.Once());
-            _mockNotificationService.Verify(service => service.SendDelayNotification(product.LeadTime, product.Name), Times.Once());
+            Assert.Equal(ProductNotificationType.Delay, notification?.Type);
+            Assert.Equal(product.Name, notification?.ProductName);
+            Assert.Equal(product.LeadTime, notification?.LeadTime);
         }
     }
 }
