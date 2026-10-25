@@ -46,10 +46,6 @@ namespace Refacto.Dotnet.Controllers.Tests.Controllers
                     {
                         _ = options.UseInMemoryDatabase($"InMemoryDbForTesting-{GetType()}");
                     });
-                    _ = services.AddScoped((_sp) => _mockNotificationService.Object);
-
-
-                    ServiceProvider sp = services.BuildServiceProvider();
                 });
             });
 
